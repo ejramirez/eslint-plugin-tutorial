@@ -1,6 +1,6 @@
 /**
  * @fileoverview ...
- * @author 
+ * @author
  */
 "use strict";
 
@@ -23,14 +23,16 @@ ruleTester.run("no-full-fp-lib", rule, {
     valid: [
 
         // give me some code that won't trigger a warning
+        "var $ = require('jquery');",
+        "var filter = require('lodash/fp/filter');"
     ],
 
     invalid: [
         {
             code: "var _ = require('your favorite fp library');",
             errors: [{
-                message: "Fill me in.",
-                type: "Me too"
+                message: "Prefer importing single functions over a full FP library",
+                type: "VariableDeclaration"
             }]
         }
     ]
