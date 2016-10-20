@@ -23,7 +23,9 @@ ruleTester.run("no-unsanitized-string-literal", rule, {
     valid: [
 
         // give me some code that won't trigger a warning
-        "var i = strip_tags('Some Text','')"
+        "var i = strip_tags('Some Text','');",
+        "var i = strip_tags('<script>malicious code</script>','');",
+        "var i = strip_tags('<h1><a></a></h1>','<h1>');"
     ],
 
     invalid: [
