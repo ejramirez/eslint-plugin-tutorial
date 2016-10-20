@@ -1,4 +1,4 @@
-# No unsanitized string literals (no-unsanitized-string-literal)
+# ... (no-script-tags)
 
 Please describe the origin of the rule here.
 

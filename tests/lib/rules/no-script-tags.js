@@ -1,5 +1,5 @@
 /**
- * @fileoverview No unsanitized string literals
+ * @fileoverview ...
  * @author
  */
 "use strict";
@@ -8,7 +8,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/no-unsanitized-string-literal"),
+var rule = require("../../../lib/rules/no-script-tags"),
 
     RuleTester = require("eslint").RuleTester;
 
@@ -18,7 +18,7 @@ var rule = require("../../../lib/rules/no-unsanitized-string-literal"),
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
-ruleTester.run("no-unsanitized-string-literal", rule, {
+ruleTester.run("no-script-tags", rule, {
 
     valid: [
 
