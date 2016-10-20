@@ -23,7 +23,7 @@ ruleTester.run("no-unsanitized-string-literal", rule, {
     valid: [
 
         // give me some code that won't trigger a warning
-        "var i = alert('Some Text')"
+        "var i = strip_tags('Some Text','')"
     ],
 
     invalid: [
@@ -36,6 +36,13 @@ ruleTester.run("no-unsanitized-string-literal", rule, {
         },
         {
             code: "var i = 'Some Text'",
+            errors: [{
+                message: "unsanitized variable detected",
+                type: "VariableDeclaration"
+            }]
+        },
+        {
+            code: "var i = alert('alarming')",
             errors: [{
                 message: "unsanitized variable detected",
                 type: "VariableDeclaration"
