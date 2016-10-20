@@ -44,7 +44,7 @@ ruleTester.run("no-unsanitized-string-literal", rule, {
         {
             code: "var i = alert('alarming')",
             errors: [{
-                message: "unsanitized variable detected",
+                message: "no strip_tags() call on string",
                 type: "VariableDeclaration"
             }]
         }
