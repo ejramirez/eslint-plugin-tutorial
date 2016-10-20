@@ -1,6 +1,6 @@
 /**
  * @fileoverview ...
- * @author 
+ * @author
  */
 "use strict";
 
@@ -23,14 +23,22 @@ ruleTester.run("no-unsanitized-string-literal", rule, {
     valid: [
 
         // give me some code that won't trigger a warning
+        "var i = alert('Some Text')"
     ],
 
     invalid: [
         {
             code: "var i = \"<script></script>\";",
             errors: [{
-                message: "Fill me in.",
-                type: "Me too"
+                message: "unsanitized variable detected",
+                type: "VariableDeclaration"
+            }]
+        },
+        {
+            code: "var i = 'Some Text'",
+            errors: [{
+                message: "unsanitized variable detected",
+                type: "VariableDeclaration"
             }]
         }
     ]

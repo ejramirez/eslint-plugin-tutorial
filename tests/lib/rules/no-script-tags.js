@@ -23,6 +23,7 @@ ruleTester.run("no-script-tags", rule, {
     valid: [
 
         // give me some code that won't trigger a warning
+        "var i = '<h1>Test</h1>'",
         "var i = 'Some Text'",
     ],
 
